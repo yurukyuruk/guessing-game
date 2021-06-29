@@ -1,39 +1,15 @@
-/*
-const randomNumber = Math.floor(Math.random() * 100) + 1;
-
-function userGuess(number) {  
-    if (number > randomNumber) {
-       return 'TOO BIG';
-    } else if (number < randomNumber) {
-      return 'TOO SMALL';
-    } else if (number === randomNumber){
-      return 'YOU WIN';
-    }
-}
-
-while(true) {
-  const number = Number(prompt('Please enter a number:'));
-  const resultOfUserGuess = userGuess(number);
-  if (isNaN(number)) {
-    alert('Please enter a number value');
-  } else if (resultOfUserGuess === 'TOO SMALL') {
-    alert('TOO SMALL');
-  } else if (resultOfUserGuess === 'TOO BIG') {
-    alert('TOO BIG');
-  } else if (resultOfUserGuess === 'YOU WIN') {
-    alert('YOU WIN');
-    break;
-  } 
-}
-*/
-
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 let typingArea = document.querySelector(".typing-area");
-const guessHint = document.querySelector(".guess-hint");
-const questionMark = document.querySelector(".question-mark");
-
 const submitButton = document.querySelector(".submit-button");
-submitButton.addEventListener("click", function(event) {
+const resetButton = document.querySelector(".reset-button");
+const questionMark = document.querySelector(".question-mark");
+let guessHint = document.querySelector(".guess-hint");
+let historyList = document.querySelector(".history-list");
+let guessCounter = document.querySelector(".guess-counter");
+let guessCount = document.querySelector(".guess-count");
+let historyListElement;
+
+submitButton.addEventListener("click", (event) => {
   event.preventDefault();
   let comment;
   const correctAnswer = "CORRECT ANSWER";
@@ -41,43 +17,61 @@ submitButton.addEventListener("click", function(event) {
   const closeAnswer = "CLOSE";
   const farAnswer = "FAR";
   
-  if(randomNumber == typingArea.value) {
+  if(randomNumber === Number(typingArea.value)) {
     comment = correctAnswer;
     questionMark.innerHTML = randomNumber;
-  } else if(typingArea.value < 10) {
-      if(Math.abs(randomNumber - typingArea.value) === 1) {
-        comment = veryCloseAnswer;    
-      } else if(Math.abs(randomNumber - typingArea.value) < 6) {
-        comment = closeAnswer;
-      } else {
-        comment = farAnswer;
-      }
+    questionMark.classList.add("style");
+    questionMark.style.fontWeight = "bold";
+    questionMark.style.color = "blue";
   } else {
-      if(Math.abs(randomNumber - typingArea.value) < 11) {
+      if(Math.abs(randomNumber - typingArea.value) < 6) {
         comment = veryCloseAnswer; 
-      } else if(Math.abs(randomNumber - typingArea.value) < 51) {
+      } else if(Math.abs(randomNumber - typingArea.value) < 16 ) {
         comment = closeAnswer;
       } else {
         comment = farAnswer;
       }
   };
-
-  let historyList = document.createElement("li");
-  historyList.className = "list-elements";
-  ul.append(historyList);
-  historyList.innerHTML = typingArea.value + " " + comment;
-  guessHint.innerHTML = comment;
+  
+  historyListElement = document.createElement("li");
+  historyList.append(historyListElement);
+  historyListElement.textContent = typingArea.value + " " + comment;
+  historyListElement.classList.add("style");
+  historyListElement.style.fontWeight = "bold";
+  
+  guessCount.textContent = historyList.childElementCount;
+  guessCount.classList.add("style");
+  guessCount.style.marginLeft = "5rem";
+  guessCount.style.color = "rgb(175, 59, 59)";
+  guessHint.textContent = comment;
+  guessHint.classList.add("style");
+  guessHint.style.fontWeight = "bold";
+  if(comment === correctAnswer) {
+    guessHint.style.color = "blue";
+    historyListElement.style.color = "blue";
+    typingArea.setAttribute("disabled", "disabled");
+  } else if(comment === veryCloseAnswer) {
+    guessHint.style.color = "green";
+    historyListElement.style.color = "green";
+  } else if(comment === closeAnswer) {
+    guessHint.style.color = "orange";
+    historyListElement.style.color = "orange";
+  } else {
+    guessHint.style.color = "red";
+    historyListElement.style.color = "red";
+  }
   typingArea.value = ""; 
 });
 
-const resetButton = document.querySelector(".reset-button");
-resetButton.addEventListener("click", function(event) {
-  guessHint.innerHTML = "";
-  questionMark.innerHTML = "?";
-  const guessList = document.querySelectorAll(".list-elements");
-  for(let i = 0; i < guessList.length; i++) {
-    guessList[i].remove();
-  }
+
+resetButton.addEventListener("click", () => {
+  guessHint.textContent = "Please enter a number between 1-100";
+  guessHint.removeAttribute("style");
+  questionMark.textContent = "?";
+  questionMark.removeAttribute("style");
+  historyList.innerHTML = "";
+  guessCount.textContent= "";
+  typingArea.removeAttribute("disabled");
   randomNumber = Math.floor(Math.random() * 100) + 1;
 });
 

@@ -7,15 +7,15 @@
 </head>
 <body>
     <h1 class="question-mark">?</h1>
-    <p class="guess-hint"></p>
+    <p class="guess-hint">Please enter a number between 1-100</p>
     <form>
         <input class="reset-button" type="reset" value="reset">
-        <input class="typing-area" type="number" placeholder="Please enter a number">
+        <input class="typing-area" type="number" placeholder="Enter here" min="1" max="100">
         <input class="submit-button" type="submit" value="confirm">
     </form>
     <details>
-        <summary>See previous guesses</summary>
-        <ul id="ul"></ul>
+        <summary class="guess-counter">See previous guesses<div class="guess-count"></div></summary>
+        <ul class="history-list"></ul>
     </details>
     <script type="module" src="./index.js"></script>
 </body>
