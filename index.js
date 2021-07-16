@@ -1,6 +1,6 @@
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 let typingArea = document.querySelector(".typing-area");
-const submitButton = document.querySelector(".submit-button");
+let submitButton = document.querySelector(".submit-button");
 const resetButton = document.querySelector(".reset-button");
 const questionMark = document.querySelector(".question-mark");
 let guessHint = document.querySelector(".guess-hint");
@@ -8,14 +8,40 @@ let historyList = document.querySelector(".history-list");
 let guessCounter = document.querySelector(".guess-counter");
 let guessCount = document.querySelector(".guess-count");
 let historyListElement;
+let invalidInput = document.querySelector(".invalid-input");
+const correctAnswer = "CORRECT ANSWER";
+const veryCloseAnswer = "VERY CLOSE";
+const closeAnswer = "CLOSE";
+const farAnswer = "FAR";
+
+/*function validateInput() {
+  let x = typingArea.value;
+  if(x !== 0 || x !== 1 || x !== 2 || x !== 3 || x !== 4 || x !== 5 || x !== 6 || x !== 7 || x !== 8 || x !== 9) {
+    invalidInput.textContent = "Please enter a number.";
+    submitButton.disabled = true;
+  }
+}
+
+typingArea.addEventListener("keyup", () => {
+  validateInput();
+  }
+)*/
+
+function getXPercentageOfNumberMagnitude(x) {
+  return Math.floor(Math.pow(10, randomNumber.toString().length) * x) + 1;
+}
+
+function isVeryCloseAnswer() {
+  return Math.abs(randomNumber - typingArea.value) < getXPercentageOfNumberMagnitude(0.05);
+}
+
+function isCloseAnswer() {
+  return Math.abs(randomNumber - typingArea.value) < getXPercentageOfNumberMagnitude(0.1);
+}
 
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
   let comment;
-  const correctAnswer = "CORRECT ANSWER";
-  const veryCloseAnswer = "VERY CLOSE";
-  const closeAnswer = "CLOSE";
-  const farAnswer = "FAR";
   
   if(randomNumber === Number(typingArea.value)) {
     comment = correctAnswer;
@@ -24,9 +50,9 @@ submitButton.addEventListener("click", (event) => {
     questionMark.style.fontWeight = "bold";
     questionMark.style.color = "blue";
   } else {
-      if(Math.abs(randomNumber - typingArea.value) < 6) {
+      if(isVeryCloseAnswer()) {
         comment = veryCloseAnswer; 
-      } else if(Math.abs(randomNumber - typingArea.value) < 16 ) {
+      } else if(isCloseAnswer()) {
         comment = closeAnswer;
       } else {
         comment = farAnswer;
@@ -50,6 +76,7 @@ submitButton.addEventListener("click", (event) => {
     guessHint.style.color = "blue";
     historyListElement.style.color = "blue";
     typingArea.setAttribute("disabled", "disabled");
+    submitButton.disabled = true;
   } else if(comment === veryCloseAnswer) {
     guessHint.style.color = "green";
     historyListElement.style.color = "green";
@@ -73,6 +100,7 @@ resetButton.addEventListener("click", () => {
   guessCount.textContent= "";
   typingArea.removeAttribute("disabled");
   randomNumber = Math.floor(Math.random() * 100) + 1;
+  submitButton.disabled = false;
 });
 
 
