@@ -19,6 +19,13 @@ typingArea.addEventListener("keydown", (event) => {
     event.preventDefault();
   }
 })
+/*
+submitButton.addEventListener("click", (event) => {
+  if(typingArea.value === "") {
+    event.preventDefault();
+  }
+})
+*/
 
 function getXPercentageOfNumberMagnitude(x) {
   return Math.floor(Math.pow(10, randomNumber.toString().length) * x) + 1;
@@ -35,13 +42,13 @@ function isCloseAnswer() {
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
   let comment;
-
+console.log(randomNumber);
   if (randomNumber === Number(typingArea.value)) {
     comment = correctAnswer;
     questionMark.innerHTML = randomNumber;
     questionMark.classList.add("style");
     questionMark.style.fontWeight = "bold";
-    questionMark.style.color = "blue";
+    questionMark.style.animation = "winner-number 2s linear infinite";
   } else {
     if (isVeryCloseAnswer()) {
       comment = veryCloseAnswer;
@@ -57,35 +64,43 @@ submitButton.addEventListener("click", (event) => {
   historyListElement.textContent = typingArea.value + " " + comment;
   historyListElement.classList.add("style");
   historyListElement.style.fontWeight = "bold";
+  historyListElement.style.fontFamily = "cursive";
+  historyListElement.style.borderRadius = "3rem";
+  historyListElement.style.fontSize = "1.5rem";
+  historyListElement.style.backgroundColor = "rgb(76, 115, 175)";
+  historyListElement.style.width = "45rem";
+  historyListElement.style.listStylePosition= "inside";
+  historyListElement.style.marginBottom = "0.5rem";
 
   guessCount.textContent = historyList.childElementCount;
   guessCount.classList.add("style");
-  guessCount.style.marginLeft = "5rem";
-  guessCount.style.color = "rgb(175, 59, 59)";
+  guessCount.style.color = "white";
+  guessCount.style.padding = "0 1rem 0 1rem";
   guessHint.textContent = comment;
   guessHint.classList.add("style");
   guessHint.style.fontWeight = "bold";
+  guessHint.style.marginBottom = "-1.5rem";
   if (comment === correctAnswer) {
-    guessHint.style.color = "blue";
-    historyListElement.style.color = "blue";
+    guessHint.style.color = "rgb(62, 139, 255)";
+    historyListElement.style.color = "rgb(62, 139, 255)";
     typingArea.setAttribute("disabled", "disabled");
     submitButton.disabled = true;
   } else if (comment === veryCloseAnswer) {
-    guessHint.style.color = "green";
-    historyListElement.style.color = "green";
+    guessHint.style.color = "rgb(68, 250, 189)";
+    historyListElement.style.color = "rgb(68, 250, 189)";
   } else if (comment === closeAnswer) {
-    guessHint.style.color = "orange";
-    historyListElement.style.color = "orange";
+    guessHint.style.color = "rgb(250, 252, 148)";
+    historyListElement.style.color = "rgb(250, 252, 148)";
   } else {
-    guessHint.style.color = "red";
-    historyListElement.style.color = "red";
+    guessHint.style.color = "rgb(255, 64, 64)";
+    historyListElement.style.color = "rgb(255, 64, 64)";
   }
   typingArea.value = "";
 });
 
 
 resetButton.addEventListener("click", () => {
-  guessHint.textContent = "Please enter a number between 1-100";
+  guessHint.textContent = "";
   guessHint.removeAttribute("style");
   questionMark.textContent = "?";
   questionMark.removeAttribute("style");
