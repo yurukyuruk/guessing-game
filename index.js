@@ -63,23 +63,12 @@ console.log(randomNumber);
   historyList.append(historyListElement);
   historyListElement.textContent = typingArea.value + " " + comment;
   historyListElement.classList.add("style");
-  historyListElement.style.fontWeight = "bold";
-  historyListElement.style.fontFamily = "cursive";
-  historyListElement.style.borderRadius = "3rem";
-  historyListElement.style.fontSize = "1.5rem";
-  historyListElement.style.backgroundColor = "rgb(76, 115, 175)";
-  historyListElement.style.width = "45rem";
-  historyListElement.style.listStylePosition= "inside";
-  historyListElement.style.marginBottom = "0.5rem";
-
+  historyListElement.classList.add("history-list-element");
+  
   guessCount.textContent = historyList.childElementCount;
-  guessCount.classList.add("style");
-  guessCount.style.color = "white";
-  guessCount.style.padding = "0 1rem 0 1rem";
+  
   guessHint.textContent = comment;
-  guessHint.classList.add("style");
-  guessHint.style.fontWeight = "bold";
-  guessHint.style.marginBottom = "-1.5rem";
+  
   if (comment === correctAnswer) {
     guessHint.style.color = "rgb(62, 139, 255)";
     historyListElement.style.color = "rgb(62, 139, 255)";
@@ -100,12 +89,12 @@ console.log(randomNumber);
 
 
 resetButton.addEventListener("click", () => {
-  guessHint.textContent = "";
+  guessHint.textContent = "Guess me!";
   guessHint.removeAttribute("style");
   questionMark.textContent = "?";
   questionMark.removeAttribute("style");
   historyList.innerHTML = "";
-  guessCount.textContent = "";
+  guessCount.textContent = "0";
   typingArea.removeAttribute("disabled");
   randomNumber = Math.floor(Math.random() * 100) + 1;
   submitButton.disabled = false;
