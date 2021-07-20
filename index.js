@@ -47,6 +47,8 @@ console.log(randomNumber);
     comment = correctAnswer;
     questionMark.innerHTML = randomNumber;
     questionMark.classList.add("style");
+    questionMark.style.background = "none";
+    questionMark.style.border = "none";
     questionMark.style.fontWeight = "bold";
     questionMark.style.animation = "winner-number 2s linear infinite";
   } else {
