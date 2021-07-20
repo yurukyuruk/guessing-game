@@ -81,8 +81,8 @@ console.log(randomNumber);
     guessHint.style.color = "rgb(250, 252, 148)";
     historyListElement.style.color = "rgb(250, 252, 148)";
   } else {
-    guessHint.style.color = "rgb(255, 64, 64)";
-    historyListElement.style.color = "rgb(255, 64, 64)";
+    guessHint.style.color = "rgb(253, 123, 123)";
+    historyListElement.style.color = "rgb(253, 123, 123)";
   }
   typingArea.value = "";
 });
