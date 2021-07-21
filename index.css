@@ -18,7 +18,6 @@ ul {
 }
 .question-mark {
     color: rgb(38, 80, 143);
-    border: rgb(76, 115, 175) 3px solid;
     border-radius: 2rem;
     background-color: rgb(76, 115, 175);
     width: 25rem;
@@ -121,7 +120,7 @@ ul {
     to {color: rgb(62, 139, 255);}
   }
 
-  .range {
+  .minimum-input, .maximum-input {
       text-align: center;
       color: rgb(38, 80, 143);
       font-family: cursive;
@@ -135,7 +134,7 @@ ul {
       padding-bottom: 0.5rem;
   }
 
-  .range::placeholder {
+  .minimum-input::placeholder, .maximum-input::placeholder {
       color: rgb(38, 80, 143);
       font-weight: bold;
       text-align: center;
@@ -183,6 +182,7 @@ ul {
   section p {
       color: white;
       font-size: 2rem;
+      transform: scale(2, 1);
   }
   
 form {
