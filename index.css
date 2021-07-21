@@ -116,8 +116,9 @@ ul {
     font-weight: normal;
 }
   @keyframes winner-number {
-    from {color: rgb(68, 250, 189);}
-    to {color: rgb(62, 139, 255);}
+    0% {color: rgb(68, 250, 189);}
+    50% {color: rgb(250, 252, 148);}
+    100% {color: rgb(253, 123, 123);}
   }
 
   .minimum-input, .maximum-input {
