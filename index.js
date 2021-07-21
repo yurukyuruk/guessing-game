@@ -19,18 +19,27 @@ const veryCloseAnswer = "VERY CLOSE";
 const closeAnswer = "CLOSE";
 const farAnswer = "FAR";
 
+
+
 submitButton.disabled = true;
-typingArea.addEventListener("change", () => {
-  if(typingArea.value != "") {
-    submitButton.disabled = false;
+typingArea.addEventListener("input", () => {
+  if(typingArea.value === "") {
+    return void 0;
+  } 
+  submitButton.disabled = false;  
+  if(Number(typingArea.value) < Math.min(Number(minimumInput.value), Number(maximumInput.value)) || Number(typingArea.value) > Math.max(Number(minimumInput.value), Number(maximumInput.value))) {
+    window.alert("Your guess is not in the range");
+    submitButton.disabled = true;
   }
 })
 
-typingArea.addEventListener("keydown", (event) => {
-  if (isNaN(parseInt(event.key, 10))) {
+typingArea.addEventListener("keydown", handleNumberInputKeydownEvent);
+
+function handleNumberInputKeydownEvent(event) {
+  if (isNaN(parseInt(event.key, 10)) && event.key !== "Backspace" && event.key !== "Enter" && event.key !== "Tab") {
     event.preventDefault();
   }
-})
+}
 
 function getXPercentageOfNumberMagnitude(x) {
   return Math.floor(Math.pow(10, randomNumber.toString().length) * x) + 1;
@@ -47,6 +56,8 @@ function isCloseAnswer() {
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
   let comment;
+
+  
 
   minimumInput.disabled = true;
   maximumInput.disabled = true;
@@ -93,6 +104,7 @@ submitButton.addEventListener("click", (event) => {
 
   typingArea.value = "";
   submitButton.disabled = true;
+
 });
 
 
@@ -112,16 +124,15 @@ resetButton.addEventListener("click", () => {
   
   randomNumber = Math.floor(Math.random() * 100) + 1;
   
-  submitButton.disabled = false;
+  submitButton.disabled = true;
   minimumInput.disabled = false;
   maximumInput.disabled = false;
+  
+  minimumInput.value = "1";
+  maximumInput.value = "100";
 });
 
-rangeInputs.addEventListener("keydown", (event) => {
-  if (isNaN(parseInt(event.key, 10))) {
-    event.preventDefault();
-  }
-})
+rangeInputs.addEventListener("keydown", handleNumberInputKeydownEvent);
 
 rangeInputs.addEventListener( "change", () => {
   randomNumber = Math.floor(Math.random() * Math.abs(maximumInput.value - minimumInput.value)  + Math.min(minimumInput.value, maximumInput.value) + 1);
