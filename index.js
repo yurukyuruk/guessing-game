@@ -113,6 +113,7 @@ resetButton.addEventListener("click", () => {
   guessHint.style.color = "white";
   
   questionMark.textContent = "?";
+  questionMark.style.animation = "none";
   questionMark.style.color = "rgb(38, 80, 143)";
   questionMark.style.background ="rgb(76, 115, 175";
   
