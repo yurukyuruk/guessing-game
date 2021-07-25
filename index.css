@@ -115,12 +115,7 @@ ul {
     text-align: center;
     font-weight: normal;
 }
-  @keyframes winner-number {
-    0% {color: rgb(68, 250, 189);}
-    50% {color: rgb(250, 252, 148);}
-    100% {color: rgb(253, 123, 123);}
-  }
-
+  
   .minimum-input, .maximum-input {
       text-align: center;
       color: rgb(38, 80, 143);
@@ -189,4 +184,28 @@ ul {
 form {
     margin-bottom: -1rem;
 }
-  
+
+
+.correct-answer {
+    background: none;
+    animation: winner-number 2s linear infinite;
+}
+
+@keyframes winner-number {
+    0% {color: rgb(68, 250, 189);}
+    50% {color: rgb(250, 252, 148);}
+    100% {color: rgb(253, 123, 123);}
+}
+
+
+.very-close-answer {
+    color: rgb(68, 250, 189);
+}
+
+.close-answer {
+    color: rgb(250, 252, 148);
+}
+
+.far-answer {
+    color: rgb(253, 123, 123);
+}
