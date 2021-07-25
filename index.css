@@ -17,13 +17,13 @@ ul {
 }
 .frame {
     width: 36rem;
-    height: 38rem;
     border: rgb(76, 115, 175) 3px solid;
     border-radius: 2rem;
     border-bottom: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 6rem;
 }
 .question-mark {
     color: rgb(38, 80, 143);
@@ -136,7 +136,7 @@ section p {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(76, 115, 175);
-    margin: -3.3rem 0 0.5rem 0;
+    margin: -3rem 0 0.5rem 0;
     border-radius: 3rem;
     border: white 1px solid;
     color: white;
@@ -287,7 +287,6 @@ section p {
   @media (max-width: 430px) {
       .frame {
         width: 96vw;
-          height: 35.6rem;
       }
       .guess-hint {
           font-size: 2rem;
@@ -308,7 +307,6 @@ section p {
       .range-inputs {
           width: 86vw;
           padding: 0 2rem 0 2rem;
-          margin-bottom: 3rem;
       }
       .guess-counter {
           font-size: 1.2rem;
@@ -324,8 +322,8 @@ section p {
   }
   @media (max-width: 370px) {
       .frame {
-        width: 96vw;
-          height: 33rem;
+        width: 96vw;,ü
+          
       }
       .question-mark {
           font-size: 14rem;
