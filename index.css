@@ -8,7 +8,6 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 ul {
@@ -16,16 +15,122 @@ ul {
     padding: 0;
     list-style-type: none;
 }
+.frame {
+    width: 50rem;
+    height: 49.3rem;
+    border: rgb(76, 115, 175) 3px solid;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .question-mark {
     color: rgb(38, 80, 143);
     border-radius: 2rem;
     background-color: rgb(76, 115, 175);
     width: 25rem;
     font-size: 20rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin: 2rem 0 1rem 0;
     display: flex;
     justify-content: center;
+}
+.guess-hint {
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: cursive;
+    margin: 0 0 -1.5rem 0;
+}
+form {
+    margin-bottom: -1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.typing-area {
+    background-color: white;
+    color: rgb(38, 80, 143);
+    border: rgb(76, 115, 175) 5px solid;
+    padding: 1rem;
+    width: 25rem;
+    font-family: cursive;
+    font-weight: bold;
+    margin: 3rem 2rem 0 2rem;
+    border-radius: 3rem;
+    text-align: center;
+}
+.typing-area::placeholder {
+    color: rgb(38, 80, 143);
+    text-align: center;
+    font-weight: normal;
+}
+.reset-button, .submit-button {
+    background-color: rgb(253, 123, 123);
+    border-radius: 3rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    color: white;
+    cursor: pointer;
+    width: 8rem;
+    height: 4rem;
+    font-family: cursive;
+    border: white 1px solid;
+    margin-top: 3rem;
+}
+.reset-button:hover, .submit-button:hover {
+    transform: scale(1.2, 1.2);
+    background-color: rgb(241, 90, 90);
+    font-weight: bold;
+}
+.range-inputs {
+    width: 46rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    height: 2rem;
+    padding: 2rem 11rem 2rem 11rem;
+    border-radius: 3rem;
+    background: rgb(76, 115, 175);
+}
+.minimum-input, .maximum-input {
+    text-align: center;
+    color: rgb(38, 80, 143);
+    font-family: cursive;
+    font-weight: bold;
+    width: 9rem;
+    border: white 5px solid;
+    background-color: rgb(250, 252, 148);
+    border-radius: 3rem;
+    padding: 0.5rem 0 0.5rem 1.7rem;
+}
+.minimum-input::placeholder, .maximum-input::placeholder {
+    color: rgb(38, 80, 143);
+    font-weight: bold;
+    text-align: center;
+}
+section p {
+    color: white;
+    font-size: 2rem;
+    transform: scale(2, 1);
+}
+.guess-counter {
+    font-family: cursive;
+    cursor: pointer;
+    font-size: 2rem;
+    width: 50rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(76, 115, 175);
+    margin: -3.7rem 0 0.5rem 0;
+    border-radius: 3rem;
+    border: white 1px solid;
+    color: white;
+    padding: 0.2rem 0.3rem 0.25rem 2.2rem;
+}
+.guess-counter:hover {
+    color: rgb(38, 80, 143);
+    font-weight: bold;
 }
 .guess-count {
     display: inline-block;
@@ -38,174 +143,100 @@ ul {
     justify-content: center;
     margin-right: 2rem;
 }
-
-.guess-hint {
-    color: white;
-    font-weight: bold;
-    font-size: 3rem;
-    font-family: cursive;
-    margin-top: 0;
-    margin-bottom: -1.5rem;
-}
-
-/*.reset-button {
-    flex: 1;
-    width: 5rem;
-}
-.typing-area {
-    flex: 2;
-}
-.submit-button {
-    flex: 1;
-}*/
-.guess-counter {
-    font-family: cursive;
-    cursor: pointer;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    width: 50rem;
+.history-list {
     display: flex;
-    justify-content: space-between;
-    background-color: rgb(76, 115, 175);
-    margin-top: -3.7rem;
-    margin-bottom: 0.5rem;
-    border-radius: 3rem;
-    border: white 1px solid;
-    color: white;
-    padding: 0.2rem 0.3rem 0.25rem 0.3rem;
-    padding-left: 2.2rem;
+    flex-direction: column;
 }
-.guess-counter:hover {
-    color: rgb(38, 80, 143);
-    font-weight: bold;
-}
-.reset-button, .submit-button {
-    background-color: rgb(253, 123, 123);
-    border-radius: 3rem;
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    color: white;
-    cursor: pointer;
-    width: 8rem;
-    font-family: cursive;
-    border: white 1px solid;
-
-}
-.reset-button:hover, .submit-button:hover {
-    transform: scale(1.2, 1.2);
-    background-color: rgb(241, 90, 90);
-    font-weight: bold;
-}
-.typing-area {
-    background-color: white;
-    color: rgb(38, 80, 143);
-    border: rgb(76, 115, 175) 5px solid;
-    padding: 1rem;
-    width: 25rem;
-    font-family: cursive;
-    font-weight: bold;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 3rem;
-    border-radius: 3rem;
-    text-align: center;
-}
-
-.typing-area::placeholder {
-    color: rgb(38, 80, 143);
-    text-align: center;
-    font-weight: normal;
-}
-  
-  .minimum-input, .maximum-input {
-      text-align: center;
-      color: rgb(38, 80, 143);
-      font-family: cursive;
-      font-weight: bold;
-      width: 9rem;
-      border: white 5px solid;
-      background-color: rgb(250, 252, 148);
-      border-radius: 3rem;
-      padding-left: 1.7rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-  }
-
-  .minimum-input::placeholder, .maximum-input::placeholder {
-      color: rgb(38, 80, 143);
-      font-weight: bold;
-      text-align: center;
-  }
-
-  .range-inputs {
-      width: 46rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 3rem;
-      height: 2rem;
-      padding: 2rem 11rem 2rem 11rem;
-      border-radius: 3rem;
-      background: rgb(76, 115, 175);
-  }
-  .frame {
-      width: 50rem;
-      height: 49.3rem;
-      border: rgb(76, 115, 175) 3px solid;
-      border-radius: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .history-list-element {
+.history-list-element {
     font-weight: bold;
     font-family: cursive;
     border: rgb(76, 115, 175) 1px solid;
     border-radius: 3rem;
     font-size: 1.5rem;
-    
     width: 50rem;
-   
     margin-bottom: 0.5rem;
     padding-left: 2.2rem;
-    
-  }
-
-  .history-list-element::before {
-    content: "•";
-  }
-
-  section p {
-      color: white;
-      font-size: 2rem;
-      transform: scale(2, 1);
-  }
-  
-form {
-    margin-bottom: -1rem;
 }
-
-
+.history-list-element::before {
+    content: "•";
+}
 .correct-answer {
     background: none;
     animation: winner-number 2s linear infinite;
 }
-
 @keyframes winner-number {
     0% {color: rgb(68, 250, 189);}
     50% {color: rgb(250, 252, 148);}
     100% {color: rgb(253, 123, 123);}
 }
-
-
 .very-close-answer {
     color: rgb(68, 250, 189);
 }
-
 .close-answer {
     color: rgb(250, 252, 148);
 }
-
 .far-answer {
     color: rgb(253, 123, 123);
 }
+
+@media (max-width: 560px) {
+  .frame {
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   
+  .typing-area {
+      width: 15rem;
+  }
+  .range-inputs {
+      width: 35rem;
+      display: flex;
+      justify-content: center;
+  }
+  .minimum-input {
+      margin-right: 1rem;
+  }
+  .maximum-input {
+      margin-left: 1rem;
+  }
+  .guess-counter {
+      width: 40rem;
+  }
+  .history-list-element {
+      width: 40rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .frame {
+        width: 32rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        display: flex;
+    } 
+    .typing-area {
+        width: 10rem;
+    }
+    .range-inputs {
+        width: 30rem;
+        display: flex;
+        justify-content: center;
+    }
+    .minimum-input {
+        margin-right: 1rem;
+    }
+    .maximum-input {
+        margin-left: 1rem;
+    }
+    .guess-counter {
+        width: 32rem;
+    }
+    .history-list-element {
+        width: 32rem;
+    }
+  }
