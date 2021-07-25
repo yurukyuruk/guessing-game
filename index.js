@@ -21,7 +21,7 @@ const farAnswer = "FAR";
 
 window.addEventListener('load', (event) => {
   const inputList = JSON.parse(localStorage.getItem("inputList"));
-  if(inputList.length > 0) {
+  if(inputList != null && inputList.length > 0) {
     let continueOrNot = window.confirm("Do you want to continue?");
     if(continueOrNot === true) {
       minimumInput.disabled = true;

@@ -181,12 +181,11 @@ section p {
 
 @media (max-width: 560px) {
   .frame {
-    width: 40rem;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-   
+  } 
   .typing-area {
       width: 15rem;
   }
@@ -197,9 +196,15 @@ section p {
   }
   .minimum-input {
       margin-right: 1rem;
+      display: flex;
+        flex-direction: column;
+        align-items: center;
   }
   .maximum-input {
       margin-left: 1rem;
+      display: flex;
+        flex-direction: column;
+        align-items: center;
   }
   .guess-counter {
       width: 40rem;
@@ -211,13 +216,10 @@ section p {
 
 @media (max-width: 480px) {
     .frame {
-        width: 32rem;
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    form {
-        display: flex;
     } 
     .typing-area {
         width: 10rem;
@@ -228,9 +230,15 @@ section p {
         justify-content: center;
     }
     .minimum-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-right: 1rem;
     }
     .maximum-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-left: 1rem;
     }
     .guess-counter {
