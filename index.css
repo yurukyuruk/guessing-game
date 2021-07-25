@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 html {
-    font-size: 10px;
+    font-size: 1rem;
     background-color: rgb(38, 80, 143);
 }
 body {
@@ -179,7 +179,7 @@ section p {
     color: rgb(253, 123, 123);
 }
 
-@media (max-width: 560px) {
+@media (max-width: 500px) {
   .frame {
     width: 100vw;
     display: flex;
@@ -215,6 +215,9 @@ section p {
 }
 
 @media (max-width: 480px) {
+    /*html {
+        font-size: 20px;
+    }*/
     .frame {
         width: 100vw;
         display: flex;
