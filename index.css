@@ -286,6 +286,7 @@ section p {
 
   @media (max-width: 430px) {
       .frame {
+        width: 96vw;
           height: 35.6rem;
       }
       .guess-hint {
@@ -323,6 +324,7 @@ section p {
   }
   @media (max-width: 370px) {
       .frame {
+        width: 96vw;
           height: 33rem;
       }
       .question-mark {
