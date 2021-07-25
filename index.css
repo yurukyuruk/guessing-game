@@ -16,10 +16,11 @@ ul {
     list-style-type: none;
 }
 .frame {
-    width: 50rem;
-    height: 49.3rem;
+    width: 36rem;
+    height: 38rem;
     border: rgb(76, 115, 175) 3px solid;
     border-radius: 2rem;
+    border-bottom: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,11 +29,13 @@ ul {
     color: rgb(38, 80, 143);
     border-radius: 2rem;
     background-color: rgb(76, 115, 175);
-    width: 25rem;
-    font-size: 20rem;
+    width: 15rem;
+    height: 15rem;
+    font-size: 15rem;
     margin: 2rem 0 1rem 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .guess-hint {
     color: white;
@@ -52,10 +55,12 @@ form {
     background-color: white;
     color: rgb(38, 80, 143);
     border: rgb(76, 115, 175) 5px solid;
-    padding: 1rem;
-    width: 25rem;
+    padding: 0.6rem;
+    width: 15rem;
+    height: 3.75rem;
     font-family: cursive;
     font-weight: bold;
+    font-size: 1.4rem;
     margin: 3rem 2rem 0 2rem;
     border-radius: 3rem;
     text-align: center;
@@ -66,14 +71,17 @@ form {
     font-weight: normal;
 }
 .reset-button, .submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(253, 123, 123);
     border-radius: 3rem;
-    padding: 1rem 0.5rem 1rem 0.5rem;
     color: white;
     cursor: pointer;
-    width: 8rem;
-    height: 4rem;
+    width: 6rem;
+    height: 3rem;
     font-family: cursive;
+    font-size: 1.2rem;
     border: white 1px solid;
     margin-top: 3rem;
 }
@@ -83,26 +91,29 @@ form {
     font-weight: bold;
 }
 .range-inputs {
-    width: 46rem;
+    width: 32rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 3rem;
-    height: 2rem;
-    padding: 2rem 11rem 2rem 11rem;
+    height: 3rem;
+    padding: 0 11rem 0 11rem;
     border-radius: 3rem;
     background: rgb(76, 115, 175);
+    
 }
 .minimum-input, .maximum-input {
+    padding-left: 1rem;
     text-align: center;
     color: rgb(38, 80, 143);
     font-family: cursive;
     font-weight: bold;
-    width: 9rem;
-    border: white 5px solid;
+    font-size: 1.4rem;
+    width: 6rem;
+    height: 3rem;
+    border: white 3px solid;
     background-color: rgb(250, 252, 148);
     border-radius: 3rem;
-    padding: 0.5rem 0 0.5rem 1.7rem;
 }
 .minimum-input::placeholder, .maximum-input::placeholder {
     color: rgb(38, 80, 143);
@@ -111,18 +122,21 @@ form {
 }
 section p {
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     transform: scale(2, 1);
+    padding: 0 1.4rem 0 1.4rem;
 }
 .guess-counter {
     font-family: cursive;
     cursor: pointer;
-    font-size: 2rem;
-    width: 50rem;
+    font-size: 1.4rem;
+    width: 36rem;
+    height: 3rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(76, 115, 175);
-    margin: -3.7rem 0 0.5rem 0;
+    margin: -3.3rem 0 0.5rem 0;
     border-radius: 3rem;
     border: white 1px solid;
     color: white;
@@ -138,10 +152,13 @@ section p {
     background-color: rgb(38, 80, 143);
     border-radius: 3rem;
     border: white 1px solid;
-    width: 8rem;
+    width: 6rem;
+    height: 2.3rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-right: 2rem;
+    font-size: 1.4rem;
 }
 .history-list {
     display: flex;
@@ -153,7 +170,7 @@ section p {
     border: rgb(76, 115, 175) 1px solid;
     border-radius: 3rem;
     font-size: 1.5rem;
-    width: 50rem;
+    width: 36rem;
     margin-bottom: 0.5rem;
     padding-left: 2.2rem;
 }
@@ -179,18 +196,20 @@ section p {
     color: rgb(253, 123, 123);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .frame {
-    width: 100vw;
+    width: 96vw;
     display: flex;
     flex-direction: column;
     align-items: center;
   } 
-  .typing-area {
-      width: 15rem;
+  
+  .main-buttons {
+      width: 86vw;
   }
+ 
   .range-inputs {
-      width: 35rem;
+      width: 86vw;
       display: flex;
       justify-content: center;
   }
@@ -206,29 +225,42 @@ section p {
         flex-direction: column;
         align-items: center;
   }
+  section p {
+    padding: 0 0.4rem 0 0.4rem;
+  }
   .guess-counter {
-      width: 40rem;
+      width: 96vw;
   }
   .history-list-element {
-      width: 40rem;
+      width: 96vw;
+  }
+  .guess-hint {
+      font-size: 2.5rem;
   }
 }
 
+@media (max-width: 550px) {
+    .typing-area {
+        width: 12rem;
+    }
+    
+}
 @media (max-width: 480px) {
-    /*html {
-        font-size: 20px;
-    }*/
     .frame {
-        width: 100vw;
+        width: 96vw;
         display: flex;
         flex-direction: column;
         align-items: center;
-    } 
+    }
+    .main-buttons {
+        width: 86vw;
+    }  
     .typing-area {
         width: 10rem;
+        margin: 3rem 1.5rem 0 1.5rem;
     }
     .range-inputs {
-        width: 30rem;
+        width: 86vw;
         display: flex;
         justify-content: center;
     }
@@ -245,9 +277,78 @@ section p {
         margin-left: 1rem;
     }
     .guess-counter {
-        width: 32rem;
+        width: 96vw;
     }
     .history-list-element {
-        width: 32rem;
+        width: 96vw;
     }
   }
+
+  @media (max-width: 430px) {
+      .frame {
+          height: 35.6rem;
+      }
+      .guess-hint {
+          font-size: 2rem;
+      }
+      .question-mark {
+          width: 50vw;
+          height: 50vw;
+      }
+      .guess-count {
+          margin-right: 1rem;
+          font-size: 1.2rem;
+      }
+      .typing-area {
+          width: 8rem;
+          margin: 3rem 1rem 0 1rem;
+          font-size: 1.2rem;
+      } 
+      .range-inputs {
+          width: 86vw;
+          padding: 0 2rem 0 2rem;
+          margin-bottom: 3rem;
+      }
+      .guess-counter {
+          font-size: 1.2rem;
+          padding-left: 1rem;
+      }
+      .minimum-input,  .maximum-input {
+        font-size: 1.2rem;
+      }
+      .history-list-element {
+        padding-left: 1rem;
+        font-size: 1.4rem;
+      }
+  }
+  @media (max-width: 370px) {
+      .frame {
+          height: 33rem;
+      }
+      .question-mark {
+          font-size: 14rem;
+      }
+    .guess-count {
+        margin-right: 1rem;
+    }
+    .typing-area {
+        width: 6rem;
+        margin: 3rem 0.5rem 0 0.5rem;
+        font-size: 1.2rem;
+    } 
+    .range-inputs {
+        width: 86vw;
+        padding: 0 2rem 0 2rem;
+    }
+    .guess-counter {
+        font-size: 1.2rem;
+        padding-left: 1rem;
+        margin-top: -3rem;
+    }
+    .history-list-element {
+        font-size: 1.2rem;
+    }
+    .guess-hint {
+        font-size: 1.5rem;
+    }
+}
