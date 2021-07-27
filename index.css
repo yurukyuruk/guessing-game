@@ -8,9 +8,6 @@ html {
     display: flex;
     justify-content: center;
 }
-body {
-     width: 100%;
-}
 ul {
     margin: 0;
     padding: 0;
@@ -24,7 +21,7 @@ ul {
     border-radius: 2rem;
     border-bottom: none;
     padding: 1.8rem 0 5rem 0;
-    width: 100%;
+    width: 96vw;
 }
 .question-mark {
     display: flex;
@@ -84,7 +81,6 @@ ul {
     border-radius: 3rem;
     height: 3rem;
     width: 6rem;
-    flex-shrink: 0;
 }
 .reset-button:hover, .submit-button:hover {
     transform: scale(1.2, 1.2);
@@ -205,6 +201,17 @@ section p {
 @media (min-width: 650px) {
     body {
         margin: 0 20%;
+    }
+}
+@media (min-width: 600px) {
+    .frame {
+        width: 36rem;
+    }
+    .guess-counter {
+        width: 36rem;
+    }
+    .history-list-element {
+        width: 36rem;
     }
 }
 
