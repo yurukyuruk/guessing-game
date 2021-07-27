@@ -203,11 +203,8 @@ section p {
     }
 }
 @media (min-width: 650px) {
-    .frame {
+    body {
         margin: 0 20%;
-    }
-    .guess-counter {
-        margin: -3rem 20% 0;
     }
 }
 
