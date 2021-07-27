@@ -24,7 +24,7 @@ ul {
     border-radius: 2rem;
     border-bottom: none;
     padding: 1.8rem 0 5rem 0;
-    
+    width: 100%;
 }
 .question-mark {
     display: flex;
@@ -37,7 +37,6 @@ ul {
     width: 15rem;
     height: 15rem;
     margin: 0;
-   
 }
 .guess-hint {
     font-family: cursive;
@@ -211,3 +210,4 @@ section p {
         margin: -3rem 20% 0;
     }
 }
+
