@@ -2,13 +2,14 @@
     box-sizing: border-box;
 }
 html {
+    width: 100%;
     font-size: 1rem;
     background-color: rgb(38, 80, 143);
     display: flex;
     justify-content: center;
 }
 body {
-    max-width: 36rem; 
+     width: 100%;
 }
 ul {
     margin: 0;
@@ -22,8 +23,7 @@ ul {
     border: rgb(76, 115, 175) 3px solid;
     border-radius: 2rem;
     border-bottom: none;
-    height: 37rem;
-    margin-bottom: -3rem;
+    padding: 1.8rem 0 5rem 0;
     
 }
 .question-mark {
@@ -37,7 +37,7 @@ ul {
     width: 15rem;
     height: 15rem;
     margin: 0;
-    margin-top: 1.8rem;  
+   
 }
 .guess-hint {
     font-family: cursive;
@@ -137,7 +137,8 @@ section p {
     border: white 1px solid;
     border-radius: 3rem;
     height: 3rem;
-    padding: 0 5% 0 5%;
+    padding: 0 5%;
+    margin-top: -2.9rem;
 }
 .guess-counter:hover {
     font-weight: bold;
@@ -200,5 +201,13 @@ section p {
     .question-mark {
         height: 12rem;
         width: 12rem;
+    }
+}
+@media (min-width: 650px) {
+    .frame {
+        margin: 0 20%;
+    }
+    .guess-counter {
+        margin: -3rem 20% 0;
     }
 }
