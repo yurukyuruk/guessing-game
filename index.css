@@ -4,11 +4,11 @@
 html {
     font-size: 1rem;
     background-color: rgb(38, 80, 143);
+    display: flex;
+    justify-content: center;
 }
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 36rem; 
 }
 ul {
     margin: 0;
@@ -16,170 +16,165 @@ ul {
     list-style-type: none;
 }
 .frame {
-    width: 36rem;
-    border: rgb(76, 115, 175) 3px solid;
-    border-radius: 2rem;
-    border-bottom: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 6rem;
+    border: rgb(76, 115, 175) 3px solid;
+    border-radius: 2rem;
+    border-bottom: none;
+    height: 37rem;
+    margin-bottom: -3rem;
+    
 }
 .question-mark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15rem;
     color: rgb(38, 80, 143);
-    border-radius: 2rem;
     background-color: rgb(76, 115, 175);
+    border-radius: 2rem;
     width: 15rem;
     height: 15rem;
-    font-size: 15rem;
-    margin: 2rem 0 1rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    margin-top: 1.8rem;  
 }
 .guess-hint {
-    color: white;
-    font-weight: bold;
-    font-size: 3rem;
     font-family: cursive;
-    margin: 0 0 -1.5rem 0;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    margin-top: 0.9rem;
 }
-form {
-    margin-bottom: -1rem;
+.main-buttons {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 1.1rem;
+    width: 90%;  
 }
 .typing-area {
-    background-color: white;
-    color: rgb(38, 80, 143);
-    border: rgb(76, 115, 175) 5px solid;
-    padding: 0.6rem;
-    width: 15rem;
-    height: 3.75rem;
-    font-family: cursive;
-    font-weight: bold;
-    font-size: 1.4rem;
-    margin: 3rem 2rem 0 2rem;
-    border-radius: 3rem;
     text-align: center;
+    font-family: cursive;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(38, 80, 143);
+    background-color: white;
+    border: rgb(76, 115, 175) 5px solid;
+    border-radius: 3rem;
+    height: 3.75rem;
+    width: 55%;
+    margin: 0 1rem 0 1rem;
 }
 .typing-area::placeholder {
-    color: rgb(38, 80, 143);
     text-align: center;
     font-weight: normal;
+    color: rgb(38, 80, 143);
 }
 .reset-button, .submit-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(253, 123, 123);
-    border-radius: 3rem;
-    color: white;
-    cursor: pointer;
-    width: 6rem;
-    height: 3rem;
     font-family: cursive;
     font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(253, 123, 123);
     border: white 1px solid;
-    margin-top: 3rem;
+    border-radius: 3rem;
+    height: 3rem;
+    width: 6rem;
+    flex-shrink: 0;
 }
 .reset-button:hover, .submit-button:hover {
     transform: scale(1.2, 1.2);
-    background-color: rgb(241, 90, 90);
     font-weight: bold;
+    background-color: rgb(241, 90, 90);
 }
 .range-inputs {
-    width: 32rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    height: 3rem;
-    padding: 0 11rem 0 11rem;
-    border-radius: 3rem;
     background: rgb(76, 115, 175);
-    
+    border-radius: 3rem;
+    height: 3rem;
+    margin-top: 2rem;
+    width: 90%;
 }
 .minimum-input, .maximum-input {
-    padding-left: 1rem;
     text-align: center;
-    color: rgb(38, 80, 143);
     font-family: cursive;
-    font-weight: bold;
     font-size: 1.4rem;
-    width: 6rem;
-    height: 3rem;
-    border: white 3px solid;
+    font-weight: bold;
+    color: rgb(38, 80, 143);
     background-color: rgb(250, 252, 148);
+    border: white 3px solid;
     border-radius: 3rem;
+    height: 3rem;
+    width: 6rem;
 }
 .minimum-input::placeholder, .maximum-input::placeholder {
-    color: rgb(38, 80, 143);
-    font-weight: bold;
     text-align: center;
+    font-weight: bold;
+    color: rgb(38, 80, 143);
 }
 section p {
-    color: white;
-    font-size: 1.5rem;
     transform: scale(2, 1);
-    padding: 0 1.4rem 0 1.4rem;
+    font-size: 1.5rem;
+    color: white;
+    padding: 0 1rem 0 1rem;
 }
 .guess-counter {
-    font-family: cursive;
-    cursor: pointer;
-    font-size: 1.4rem;
-    width: 36rem;
-    height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(76, 115, 175);
-    margin: -3rem 0 0.5rem 0;
-    border-radius: 3rem;
-    border: white 1px solid;
+    font-family: cursive;
+    font-size: 1.4rem;
+    cursor: pointer;
     color: white;
-    padding: 0.2rem 0.3rem 0.25rem 2.2rem;
+    background-color: rgb(76, 115, 175);
+    border: white 1px solid;
+    border-radius: 3rem;
+    height: 3rem;
+    padding: 0 5% 0 5%;
 }
 .guess-counter:hover {
-    color: rgb(38, 80, 143);
     font-weight: bold;
+    color: rgb(38, 80, 143);   
 }
 .guess-count {
-    display: inline-block;
-    color: white;
-    background-color: rgb(38, 80, 143);
-    border-radius: 3rem;
-    border: white 1px solid;
-    width: 6rem;
-    height: 2.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 2rem;
     font-size: 1.4rem;
+    color: white;
+    background-color: rgb(38, 80, 143);
+    border: white 1px solid;
+    border-radius: 3rem;
+    height: 2.3rem;
+    width: 6rem;
 }
 .history-list {
     display: flex;
     flex-direction: column;
+    
 }
 .history-list-element {
-    font-weight: bold;
     font-family: cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
     border: rgb(76, 115, 175) 1px solid;
     border-radius: 3rem;
-    font-size: 1.5rem;
-    width: 36rem;
-    margin-bottom: 0.5rem;
-    padding-left: 2.2rem;
+    padding-left: 5%;
+    margin-top: 0.5rem;
 }
 .history-list-element::before {
     content: "•";
 }
 .correct-answer {
-    background: none;
     animation: winner-number 2s linear infinite;
+    background: none;
 }
 @keyframes winner-number {
     0% {color: rgb(68, 250, 189);}
@@ -196,159 +191,14 @@ section p {
     color: rgb(253, 123, 123);
 }
 
-@media (max-width: 600px) {
-  .frame {
-    width: 96vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } 
-  
-  .main-buttons {
-      width: 86vw;
-  }
- 
-  .range-inputs {
-      width: 86vw;
-      display: flex;
-      justify-content: center;
-  }
-  .minimum-input {
-      margin-right: 1rem;
-      display: flex;
-        flex-direction: column;
-        align-items: center;
-  }
-  .maximum-input {
-      margin-left: 1rem;
-      display: flex;
-        flex-direction: column;
-        align-items: center;
-  }
-  section p {
-    padding: 0 0.4rem 0 0.4rem;
-  }
-  .guess-counter {
-      width: 96vw;
-  }
-  .history-list-element {
-      width: 96vw;
-  }
-  .guess-hint {
-      font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 550px) {
-    .typing-area {
-        width: 12rem;
+@media (max-width: 520px) {
+    .guess-hint {
+        font-size: 2.2rem;
     }
-    
 }
 @media (max-width: 480px) {
-    .frame {
-        width: 96vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .main-buttons {
-        width: 86vw;
-    }  
-    .typing-area {
-        width: 10rem;
-        margin: 3rem 1.5rem 0 1.5rem;
-    }
-    .range-inputs {
-        width: 86vw;
-        display: flex;
-        justify-content: center;
-    }
-    .minimum-input {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 1rem;
-    }
-    .maximum-input {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 1rem;
-    }
-    .guess-counter {
-        width: 96vw;
-    }
-    .history-list-element {
-        width: 96vw;
-    }
-  }
-
-  @media (max-width: 430px) {
-      .frame {
-        width: 96vw;
-      }
-      .guess-hint {
-          font-size: 2rem;
-      }
-      .question-mark {
-          width: 50vw;
-          height: 50vw;
-      }
-      .guess-count {
-          margin-right: 1rem;
-          font-size: 1.2rem;
-      }
-      .typing-area {
-          width: 8rem;
-          margin: 3rem 1rem 0 1rem;
-          font-size: 1.2rem;
-      } 
-      .range-inputs {
-          width: 86vw;
-          padding: 0 2rem 0 2rem;
-      }
-      .guess-counter {
-          font-size: 1.2rem;
-          padding-left: 1rem;
-      }
-      .minimum-input,  .maximum-input {
-        font-size: 1.2rem;
-      }
-      .history-list-element {
-        padding-left: 1rem;
-        font-size: 1.4rem;
-      }
-  }
-  @media (max-width: 370px) {
-      .frame {
-        width: 96vw;,ü
-          
-      }
-      .question-mark {
-          font-size: 14rem;
-      }
-    .guess-count {
-        margin-right: 1rem;
-    }
-    .typing-area {
-        width: 6rem;
-        margin: 3rem 0.5rem 0 0.5rem;
-        font-size: 1.2rem;
-    } 
-    .range-inputs {
-        width: 86vw;
-        padding: 0 2rem 0 2rem;
-    }
-    .guess-counter {
-        font-size: 1.2rem;
-        padding-left: 1rem;
-        margin-top: -3rem;
-    }
-    .history-list-element {
-        font-size: 1.2rem;
-    }
-    .guess-hint {
-        font-size: 1.5rem;
+    .question-mark {
+        height: 12rem;
+        width: 12rem;
     }
 }
