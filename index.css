@@ -132,6 +132,7 @@ section p {
     border: white 1px solid;
     border-radius: 3rem;
     height: 3rem;
+    width: 96vw;
     padding: 0 5%;
     margin-top: -2.9rem;
 }
@@ -164,6 +165,7 @@ section p {
     border-radius: 3rem;
     padding-left: 5%;
     margin-top: 0.5rem;
+    width: 96vw;
 }
 .history-list-element::before {
     content: "•";
@@ -196,11 +198,6 @@ section p {
     .question-mark {
         height: 12rem;
         width: 12rem;
-    }
-}
-@media (min-width: 650px) {
-    body {
-        margin: 0 20%;
     }
 }
 @media (min-width: 600px) {
